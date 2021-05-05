@@ -9,12 +9,12 @@
       <title>Random Password and Key Generator</title>
       
       <!-- Bootstrap core CSS -->
-      <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
       <!-- Fontawesome core CSS -->
       <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
       <!-- Custom styles for this template -->
-      <link href="/static/css/style.css" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
 
     </head>
     <body>
@@ -50,7 +50,7 @@
                  </div>
                               
              
-             <script src="/static/js/decode64.js"></script>
+             <script src="{{ url_for('static', filename='js/decode64.js')}}"></script>
 
              {% macro print_panel(url,title,description,keys) -%}
              <div class="card mb-3">
@@ -108,8 +108,8 @@
      </div>
 
         <!-- Bootstrap core JS -->
-        <script src="/static/js/jquery-3.6.0.min.js"></script>
-        <script src="/static/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
 
     </body>
 </html>
