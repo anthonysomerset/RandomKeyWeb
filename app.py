@@ -1,8 +1,22 @@
+import views
 from flask import Flask
-from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+#Functions for the app - each one for each type - will be triggered by the routes below
+
+
+#main page function
+app.add_url_rule('/', view_func=views.front_page)
+app.add_url_rule('/ip_address', view_func=views.ip_address)
+app.add_url_rule('/decent', view_func=views.decent_pass)
+app.add_url_rule('/strong', view_func=views.strong_pass)
+app.add_url_rule('/ftknox', view_func=views.ftknox_pass)
+app.add_url_rule('/ci', view_func=views.ci_key)
+app.add_url_rule('/wep160', view_func=views.wpa_160_key)
+app.add_url_rule('/wpa160', view_func=views.wpa_160_key)
+app.add_url_rule('/wpa504', view_func=views.wpa_504_key)
+
+
+if __name__ == "__main__":
+  app.run()
