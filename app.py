@@ -1,5 +1,7 @@
 import views
 from flask import Flask
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 
 app = Flask(__name__)
 
@@ -17,6 +19,9 @@ app.add_url_rule('/wep160', view_func=views.wpa_160_key)
 app.add_url_rule('/wpa160', view_func=views.wpa_160_key)
 app.add_url_rule('/wpa504', view_func=views.wpa_504_key)
 
+app.wsgi_app = ProxyFix(
+    app.wsgi_app, x_for=2, x_proto=2, x_host=2, x_prefix=2
+)
 
 if __name__ == "__main__":
   app.run()
