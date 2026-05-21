@@ -6,8 +6,8 @@ name: Build and deploy Python app to Azure Web App - random-sts
 
 on:
   push:
-    branches:
-      - master
+#    branches:
+#      - master
   workflow_dispatch:
 
 jobs:
