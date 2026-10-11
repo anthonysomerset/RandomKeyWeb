@@ -1,0 +1,12 @@
+.git
+.github
+.idea
+.claude
+.venv
+venv
+__pycache__
+*.py[cod]
+.DS_Store
+.env
+Dockerfile
+.dockerignore
